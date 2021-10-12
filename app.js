@@ -110,8 +110,6 @@ function deleteTask() {
     // make sure to delete the task from the array that contains it
     if (pinned.includes(task)) {
         pinned.splice(pinned.indexOf(task), 1);
-    } else {
-        tasks.splice(pinned.indexOf(task), 1);
     }
     // then remove that element from the DOM
     task.parentElement.removeChild(task);
