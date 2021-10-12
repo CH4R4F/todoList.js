@@ -13,6 +13,7 @@
 *::after,
 *::before {
     box-sizing: inherit;
+    outline: none;
 }
 html {
     font-size: 100%;
@@ -44,7 +45,7 @@ h3 {
     max-width: 600px;
     margin: 0 auto;
     box-shadow: 0 0 20px var(--dark-gray-clr);
-    min-height: 100vh;
+    min-height: 800px;
     overflow: hidden;
     position: relative;
 }
