@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+            integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+            crossorigin="anonymous"
+        />
+        <meta name="author" content="CMarghin" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Todo</title>
+    </head>
+    <body>
+        <main>
+            <div class="app">
+                <div class="app__header" aria-hidden="true">
+                    <div class="app--logo">
+                        <h1>TODO</h1>
+                    </div>
+                    <div class="add__task">
+                        <div class="add__task--input">
+                            <input type="text" name="task" id="task_input" placeholder="Add a task ..." />
+                        </div>
+                        <button class="add__task--btn" id="add">&plus;</button>
+                    </div>
+                </div>
+
+                <!-- this is the checkbox design svg (don't fu**ing touch it XD) -->
+                <svg class="checkbox-symbol">
+                    <symbol id="check" viewbox="0 0 13 11">
+                        <polyline points="2 6 5 9 10 1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+                    </symbol>
+                </svg>
+                <!-- ==========================================================  -->
+
+                <div class="app__tasks__pinned">
+                    <p class="pin--title">pinned tasks</p>
+                </div>
+                <div class="app__tasks"></div>
+
+                <div class="no--tasks">
+                    <div class="icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <p class="notask">Hi, do you have any plans for today?</p>
+                </div>
+            </div>
+        </main>
+
+        <script src="./app.js"></script>
+    </body>
+</html>

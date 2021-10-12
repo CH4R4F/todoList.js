@@ -1,0 +1,211 @@
+:root {
+    --dark-gray-clr: #181818;
+    --light-gray-clr: #a4a4a4;
+    --bg-gray-clr: #424242;
+    --checkbox-clr: #ff5f5f;
+    --btns-clr: #ff005c;
+    --txt-clr: #fcfcfc;
+
+    --headings-font: "Righteous", cursive;
+    --text-font: "Rosario", sans-serif;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+html {
+    font-size: 100%;
+    color: var(--txt-clr);
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-gray-clr);
+}
+
+p,
+span {
+    padding: 0;
+    margin: 0;
+    font: 400 1.1rem var(--text-font);
+    letter-spacing: 1.3px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--headings-font);
+}
+
+.app {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px var(--dark-gray-clr);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+/* the app header container  */
+.app__header {
+    margin-bottom: 2rem;
+}
+
+/* the logo container  */
+.app__header .app--logo {
+    text-align: center;
+}
+
+/* the input and button container  */
+.add__task {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 4rem;
+    gap: 1rem;
+    /* justify-content: space-between; */
+}
+
+/* the input element  */
+.add__task--input input {
+    padding: 1rem 0.2rem 1rem 3rem;
+    background: var(--dark-gray-clr);
+    border: none;
+    color: var(--txt-clr);
+    border-radius: 5px;
+    width: 100%;
+    background-image: url(./images/input\ icon.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 5% center;
+}
+
+/* the button element  */
+.add__task--btn {
+    background: var(--btns-clr);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* the pin icon  */
+.pin--icon {
+    transform: rotate(35deg) translate(-10px, 14px);
+}
+.pin--icon,
+.delete--icon {
+    cursor: pointer;
+    color: silver;
+    transition: all 0.3s;
+}
+.app__tasks .app__task .pin--icon:hover,
+.delete--icon:hover {
+    color: var(--txt-clr);
+}
+i {
+    pointer-events: none;
+}
+.app__task {
+    padding: 1rem 0;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: minmax(auto, 35px) 1fr;
+    grid-auto-columns: minmax(auto, 30px);
+    user-select: none;
+}
+.app__task + .app__task {
+    margin-top: 10px;
+}
+/* ============ checkbox style =================  */
+
+/* hide the svg parent  */
+.checkbox-symbol {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+}
+/* hide the checkbox input  */
+.checkbox--input {
+    position: absolute;
+    visibility: hidden;
+}
+/* costum checkbox square ( the label element ) */
+.fake--checkbox {
+    user-select: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+/* the container of the svg  */
+.fake--checkbox .checkbox--square {
+    position: relative;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    transform: scale(1);
+    border: 3px solid var(--dark-gray-clr);
+    transition: all 0.3s ease;
+}
+
+.fake--checkbox .checkbox--square svg {
+    position: absolute;
+    fill: none;
+    stroke: var(--dark-gray-clr);
+    stroke-dasharray: 20px;
+    stroke-dashoffset: 20px;
+    transition: all 0.3s ease;
+    transform: translate3d(0, 0, 0);
+}
+
+.checkbox--input:checked + .fake--checkbox .checkbox--square {
+    background: var(--checkbox-clr);
+    animation: zoom-in-out 0.3s ease;
+}
+
+.checkbox--input:checked + .fake--checkbox .checkbox--square svg {
+    stroke-dashoffset: 0;
+}
+
+@keyframes zoom-in-out {
+    50% {
+        transform: scale(0.9);
+    }
+}
+.app__tasks__pinned {
+    border-bottom: 2px solid var(--txt-clr);
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+    display: none;
+}
+
+.pin--title {
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.no--tasks {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: silver;
+    user-select: none;
+}
+.no--tasks .icon {
+    font-size: 6rem;
+}
+.no--tasks p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-family: var(--headings-font);
+}
