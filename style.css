@@ -74,18 +74,24 @@ h3 {
     /* justify-content: space-between; */
 }
 
-/* the input element  */
-.add__task--input input {
-    padding: 1rem 0.2rem 1rem 3rem;
+/* the input elements  */
+.add__task--input {
+    display: flex;
     background: var(--dark-gray-clr);
     border: none;
-    color: var(--txt-clr);
     border-radius: 5px;
     width: 100%;
-    background-image: url(./images/input\ icon.png);
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: 5% center;
+}
+.add__task--input img {
+    padding: 1rem;
+}
+.add__task--input input {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--txt-clr);
 }
 
 /* the button element  */
